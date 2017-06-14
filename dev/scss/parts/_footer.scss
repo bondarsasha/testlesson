@@ -1,0 +1,52 @@
+.gridContainer {
+    width:1140px;
+    margin:auto;
+    
+}
+footer {
+    background: #171717;
+    margin-top:100px;
+}
+.doubleCol {
+    display:flex;
+    justify-content: space-between;
+    
+    .end {
+        
+        width:calc(25% - 20px);
+    }
+
+.foot {
+        display:flex;
+        width:calc(75% - 20px);
+
+        article {
+            width:calc((100% - 80px) / 3);
+            margin: 0 40px 40px 0;
+            overflow: hidden;
+            position:relative;
+            
+        }
+    
+        article:nth-of-type(3n) {
+        margin:0 0 40px;
+        }
+    
+        h2 {
+        font:1.4rem/2.1rem Times New Roman;
+        color: #858585;
+        border-top: .1rem solid #858585;
+            margin-top:50px;
+        }
+    
+        p {
+        font:1.2rem/1.8rem Times New Roman;
+        color: #858585;
+        }
+}
+
+    
+}
+.facebook {
+    margin-top:20px;
+}
