@@ -1,53 +1,82 @@
-/*Global________________*/
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0; }
 
 html {
   font-size: 62.5%; }
-
-body {
-  margin: 0;
-  padding: 0;
-  background: #000; }
+  html body {
+    background: #000;
+    color: #fff;
+    font: 1.6rem/2.1rem Times New Roman; }
 
 .gridContainer {
-  padding: 5vw;
-  margin: 8px; }
-  .gridContainer h2 {
-    font: 3rem/2rem Times New Roman;
-    color: #ffffff; }
-  .gridContainer h3 {
-    font: 1.4rem/2rem Times New Roman;
-    color: #ffffff; }
-  .gridContainer p {
-    font: 1.4rem/2rem Times New Roman;
-    color: #7f7f7f; }
-  .gridContainer a {
-    display: block;
-    width: 100px;
-    height: 30px;
-    padding: 5px 0 5px 0;
-    font: 1.4rem/2rem Times New Roman;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    border: .1rem solid #000;
-    background: #e85356; }
-    .gridContainer a:hover {
-      text-decoration: underline; }
+  padding: 5vw; }
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block; }
+
+.gallery {
+  padding: 20px 0; }
+
+.blog article {
+  margin: 0 0 40px; }
+
+.blog h2 {
+  padding: 0 0 1rem;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  font: 3rem/2rem Times New Roman; }
+
+.blog img, .blog h3 {
+  margin: 0 0 1rem; }
+
+.blog p {
+  color: #bbb; }
+
+.blog a {
+  display: block;
+  width: 100px;
+  height: 30px;
+  border: 0.1rem solid #000;
+  padding: 3px 0 3px 0;
+  background: #e85356;
+  text-decoration: none;
+  text-align: center;
+  color: #bbb;
+  margin-top: 15px; }
 
 @media screen and (min-width: 768px) {
-  .content {
+  .blog {
     display: flex;
     flex-flow: wrap;
     justify-content: space-between; }
-    .content article {
-      width: 50%;
-      padding: 40px; } }
+    .blog article {
+      width: calc(50% - 20px); } }
 
 @media screen and (min-width: 1170px) {
   .gridContainer {
     padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 1170px; } }
+    max-width: 1170px;
+    margin: 0 auto; }
+  .gallery .gridContainer {
+    display: flex;
+    justify-content: space-between; }
+  .gallery .items {
+    width: calc(100% - 20px); }
+  .blog {
+    justify-content: flex-start; }
+    .blog article {
+      width: calc((100% - 120px) / 4);
+      margin: 0 40px 40px 0; }
+      .blog article:nth-of-type(4n) {
+        margin: 0 0 40px; }
+    .blog h2 {
+      margin-bottom: 30px; }
+    .blog h3, .blog a {
+      margin-top: 25px; }
+    .blog a:hover {
+      text-decoration: underline; } }

@@ -1,61 +1,70 @@
-/*Global________________*/
 * {
-    box-sizing: border-box; 
-}
-html {
-    font-size:62.5%;
-}
-body{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background:#000;
-    
+    outline:0;
 }
 
+$color:#000;
+
+html {
+    font-size:62.5%;
+        body{
+            background:$color;
+            color:#fff;
+            font:1.6rem/2.1rem Times New Roman;
+       }
+}
 .gridContainer {
     padding:5vw;
-    margin:8px;
-     
-    h2 {
-        font:3rem/2rem Times New Roman;
-        color:#ffffff;
+
+}
+img {
+    width:100%;
+    max-width:100%;
+    display:block;
+}
+.gallery {
+    padding:20px 0;
+}
+.blog {
+    article {
+        margin:0 0 40px;
     }
-    h3 {
-        font:1.4rem/2rem Times New Roman;
-        color:#ffffff;
+    h2 {
+        padding:0 0 1rem;
+        margin:0 0 1rem;
+        text-transform: uppercase;
+        font:3rem/2rem Times New Roman;
+    }
+    
+    img, h3 {
+        margin:0 0 1rem;
     }
     p {
-        font:1.4rem/2rem Times New Roman;
-        color:#7f7f7f;
+        color:#bbb;
     }
     a {
         display:block;
         width:100px;
         height:30px;
-        padding: 5px 0 5px 0;
-        font:1.4rem/2rem Times New Roman;
-        color:#ffffff;
-        text-align: center;
+        border:.1rem solid $color;
+        padding:3px 0 3px 0;
+        background:#e85356;
         text-decoration: none;
-        border:.1rem solid #000;
-        background: #e85356;
-        
-        &:hover {
-            text-decoration: underline;
-        }
-        
+        text-align: center;
+        color:#bbb;
+        margin-top:15px;
     }
 }
-
 @media screen and (min-width:768px) {
-    .content {
+    .blog {
         display:flex;
         flex-flow:wrap;
         justify-content: space-between;
         
         article {
-            width:50%;
-            padding:40px;
+            width:calc(50% - 20px);
         }
     }
 }
@@ -63,9 +72,44 @@ body{
 @media screen and (min-width:1170px) {
     .gridContainer {
         padding:0;
-        margin:0;
-        width:100%;
         max-width:1170px;
-        
+        margin:0 auto;
     }
-}
+    .gallery {
+        
+        .gridContainer {
+            display:flex;
+            justify-content: space-between;
+        }
+        
+        .items {
+            width:calc(100% - 20px);
+        }
+    }
+    
+    .blog {
+        justify-content: flex-start;
+        
+        article {
+            width:calc((100% - 120px) / 4);
+            margin:0 40px 40px 0;
+            
+            &:nth-of-type(4n) {
+                margin:0 0 40px;
+            }
+        }
+        h2 {
+            margin-bottom:30px;
+        }
+        h3, a {
+            margin-top:25px;
+        }
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+      }
+    
+    }
+    
